@@ -654,11 +654,32 @@ html[data-theme="light"] .icon-btn__moon {
 .hero__link:hover {
   color: var(--text-1);
 }
+/* Every mark is boxed at 15px, but each one's artwork fills its viewBox by a
+   different amount — LinkedIn and DBLP reach the edges, the others stop at
+   71-81% — so at equal box sizes the rest looked smaller. These sizes are
+   15 / fill-ratio, which renders every icon's ARTWORK at the same height.
+   Measured with getBBox(); re-measure if a mark is ever replaced. */
 .hero__link svg,
 .hero__link img {
   width: 15px;
   height: 15px;
   flex: none;
+}
+.hero__link[href^='mailto'] svg {
+  width: 20px;
+  height: 20px;
+}
+.hero__link[href*='scholar.google'] svg {
+  width: 21px;
+  height: 21px;
+}
+.hero__link[href*='github.com'] svg {
+  width: 18.5px;
+  height: 18.5px;
+}
+.hero__link[href*='huggingface.co'] svg {
+  width: 19.5px;
+  height: 19.5px;
 }
 
 /* Portrait plate */
