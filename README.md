@@ -1,2 +1,2 @@
 # shaswata09.github.io
-Guthub Pages
+Shaswata Github Page
