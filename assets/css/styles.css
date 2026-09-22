@@ -148,7 +148,7 @@ html[data-theme="dark"] {
   --radius-lg: 8px;
   --radius-xl: 12px;
 
-  --maxw: 1080px;
+  --maxw: 1296px; /* was 1080 — widened 10% on each side */
   --gutter: 24px;
   --nav-h: 56px;
 }
