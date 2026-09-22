@@ -14,7 +14,10 @@ repository root directly, so a push to `main` is the deploy.
 index.html                  # home — hero, metrics, explore cards
 news.html                   # dated timeline, newest first
 research.html               # research threads + code & artefacts + publications
-projects.html               # applied work (jojo) + inline SVG architecture diagram
+projects.html               # applied work (jojo) — CURRENTLY HIDDEN: its nav link and
+                            #   home card are commented out in the HTML. The page still
+                            #   builds and is reachable by URL; uncomment both to restore,
+                            #   and set .explore back to 4 columns.
 experience.html             # experience, education, honours
 service.html                # teaching, peer review, program committee, chairing
 contact.html                # contact
@@ -106,10 +109,10 @@ correctly with JavaScript disabled.
   from a package.
 - **The diagram** on `projects.html` is hand-written inline SVG, painted
   entirely from theme tokens (`var(--info)`, `var(--hairline)` …) via the classes in the
-  *Projects* block of `styles.css`. That is why it follows the light/dark toggle with no
+  _Projects_ block of `styles.css`. That is why it follows the light/dark toggle with no
   second asset — do not replace it with an exported image. Geometry is plain `viewBox`
   coordinates.
-- **Portrait** is `assets/img/profile_dp.png`, shown in `.hero__plate`. That file is
+- **Portrait** is `assets/img/profile_dp.jpg`, shown in `.hero__plate`. That file is
   1080x1080 with a uniform 108px white border baked in, which `.hero__portrait` crops with
   `transform: scale(1.25)` (1080/864). If you re-export it without the border, delete that
   rule. It is also 779 KB for a 216px slot — worth downscaling to ~600px.

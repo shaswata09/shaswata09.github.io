@@ -13,7 +13,7 @@
 
 /* ---------- LIGHT — shadcn/ui neutral ---------- */
 :root,
-html[data-theme='light'] {
+html[data-theme="light"] {
   --page: #f5f5f5;
   --panel: #ffffff;
   --well: #f5f5f5;
@@ -70,7 +70,7 @@ html[data-theme='light'] {
 }
 
 /* ---------- DARK — shadcn/ui neutral (separately chosen) ---------- */
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --page: #0a0a0a;
   --panel: #1f1f1f; /* 1.20:1 on page */
   --well: #171717; /* recessed 1.09:1 under panel */
@@ -130,8 +130,8 @@ html[data-theme='dark'] {
    jojo binds tracking to the SIZE, not the tag: optical letter-spacing
    runs the other way from size, so it belongs on the step. */
 :root {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --text-xs: 0.6875rem; /* 11px — labels, meta */
   --text-sm: 0.8125rem; /* 13px — dense list body */
@@ -192,7 +192,7 @@ body {
   font-family: var(--font-sans);
   font-size: var(--text-base);
   line-height: 1.6;
-  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -429,7 +429,7 @@ ol {
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease;
 }
-.nav[data-stuck='true'] {
+.nav[data-stuck="true"] {
   border-bottom-color: var(--hairline);
 }
 
@@ -495,8 +495,8 @@ ol {
   color: var(--text-1);
   background: var(--row-hover);
 }
-.nav__link[aria-current='true'],
-.nav__link[aria-current='page'] {
+.nav__link[aria-current="true"],
+.nav__link[aria-current="page"] {
   color: var(--text-1);
   background: var(--accent-soft);
 }
@@ -540,18 +540,18 @@ ol {
 .nav__burger-close {
   display: none;
 }
-.nav__burger[aria-expanded='true'] .nav__burger-open {
+.nav__burger[aria-expanded="true"] .nav__burger-open {
   display: none;
 }
-.nav__burger[aria-expanded='true'] .nav__burger-close {
+.nav__burger[aria-expanded="true"] .nav__burger-close {
   display: block;
 }
 
 /* The theme toggle swaps which glyph is painted */
-html[data-theme='dark'] .icon-btn__sun {
+html[data-theme="dark"] .icon-btn__sun {
   display: none;
 }
-html[data-theme='light'] .icon-btn__moon {
+html[data-theme="light"] .icon-btn__moon {
   display: none;
 }
 
@@ -559,68 +559,17 @@ html[data-theme='light'] .icon-btn__moon {
    Hero
    ============================================================ */
 .hero {
-  padding-block: 88px 36px;
+  padding-block: 88px 72px;
   position: relative;
   overflow: hidden;
 }
 
-/* The neural sphere, painted by assets/js/neural-bg.js. It sits behind
-   the portrait plate and the lede. The mask dissolves it at the edges so
-   it never collides with the sticky nav or the section rule below. */
-.hero__canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  -webkit-mask-image: radial-gradient(75% 68% at 62% 46%, #000 38%, transparent 78%);
-  mask-image: radial-gradient(75% 68% at 62% 46%, #000 38%, transparent 78%);
-}
-
-/* No opacity cut in light mode: the palette in neural-bg.js already carries
-   the theme's contrast, and multiplying it here is what made the sphere
-   disappear against #f5f5f5. The ::after scrim below protects the text. */
-
-/* A scrim over the reading column only. The sphere is meant to sit behind
-   the lede, so it cannot simply be masked away there — instead the ground
-   is carried back under the text, strongest at the left margin and gone by
-   the time it reaches the portrait plate. Text contrast stops depending on
-   which way the sphere happens to have rotated. */
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    100deg,
-    var(--page) 0%,
-    color-mix(in srgb, var(--page) 86%, transparent) 26%,
-    color-mix(in srgb, var(--page) 52%, transparent) 46%,
-    transparent 64%
-  );
-}
-
-/* Light mode needs more scrim than dark. The sphere's ink is now genuinely
-   dark (52,52,68), and #f5f5f5 is a bright ground, so the same gradient that
-   suffices at night leaves the reading column at 4.48:1 — under the 4.5:1 AA
-   floor. This carries the ground further right, across the span where the
-   lede and the sphere actually overlap, and stops short of the core. */
-html[data-theme='light'] .hero::after {
-  background: linear-gradient(
-    100deg,
-    var(--page) 0%,
-    color-mix(in srgb, var(--page) 95%, transparent) 32%,
-    color-mix(in srgb, var(--page) 78%, transparent) 52%,
-    color-mix(in srgb, var(--page) 40%, transparent) 68%,
-    transparent 80%
-  );
-}
+/* The canvas and its scrim used to sit here. Both are gone: the scrim only
+   ever existed to keep text legible over the animation behind it, so with
+   the animation removed it has nothing to protect against. .hero__inner no
+   longer needs a z-index for the same reason. */
 
 .hero__inner {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 48px;
@@ -725,7 +674,7 @@ html[data-theme='light'] .hero::after {
   height: 15px;
 }
 
-/* Portrait / monogram plate */
+/* Portrait plate */
 .hero__side {
   width: 216px;
   flex: none;
@@ -747,13 +696,6 @@ html[data-theme='light'] .hero::after {
   object-fit: cover;
 }
 
-/* profile_dp.png is 1080x1080 with a uniform 108px white border baked in
-   (content is the centre 864x864). Left alone that frame reads as a bug on
-   the dark theme, so it is cropped here rather than by editing the file:
-   1080/864 = 1.25 exactly. Re-export without the border and drop this rule. */
-.hero__portrait {
-  transform: scale(1.25);
-}
 .hero__monogram {
   font-family: var(--font-mono);
   font-size: 4rem;
@@ -783,7 +725,9 @@ html[data-theme='light'] .hero::after {
    ============================================================ */
 .explore {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* 3 while the Projects card is commented out in index.html; back to 4
+     when it returns. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -844,417 +788,6 @@ html[data-theme='light'] .hero::after {
 }
 .ecard:hover .ecard__go {
   color: var(--text-1);
-}
-
-/* ============================================================
-   Projects — applied work
-   ============================================================ */
-.lede-note {
-  font-size: var(--text-lg);
-  line-height: 1.62;
-  color: var(--text-2);
-  margin-bottom: 32px;
-}
-.lede-note em {
-  color: var(--text-1);
-  font-style: normal;
-  font-weight: 600;
-}
-
-.pcard {
-  background: var(--panel);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-xl);
-  padding: 28px;
-  box-shadow: var(--shadow-panel);
-  margin-bottom: 56px;
-}
-
-.pcard__head {
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.pcard__ico {
-  width: 52px;
-  height: 52px;
-  flex: none;
-  border-radius: var(--radius-lg);
-  display: grid;
-  place-items: center;
-  background: var(--accent-soft);
-  border: 1px solid var(--hairline-strong);
-  color: var(--text-1);
-}
-.pcard__ico svg {
-  width: 26px;
-  height: 26px;
-}
-
-/* An icon that brings its own artwork and plate — the wrapper adds no
-   background or border, and the glyph fills the tile. */
-.pcard__ico--art {
-  background: none;
-  border: 0;
-  padding: 0;
-}
-.pcard__ico--art svg {
-  width: 100%;
-  height: 100%;
-}
-
-.pcard__id {
-  flex: 1 1 260px;
-  min-width: 0;
-}
-
-.pcard__name {
-  font-family: var(--font-mono);
-  font-size: var(--text-2xl);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-
-.pcard__tag {
-  font-size: var(--text-sm);
-  color: var(--text-3);
-  margin-top: 4px;
-}
-
-.pcard__links {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.pcard__desc {
-  font-size: var(--text-base);
-  line-height: 1.66;
-  color: var(--text-2);
-  max-width: 76ch;
-  margin-bottom: 18px;
-}
-.pcard__desc strong {
-  color: var(--text-1);
-  font-weight: 600;
-}
-
-.pcard__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-/* ---------- Diagrams ----------
-   The SVGs are painted entirely from theme tokens, so they follow the
-   light/dark toggle with no second asset and no image swap. */
-.diagram-block {
-  margin-bottom: 56px;
-}
-
-.diagram-note {
-  font-size: var(--text-sm);
-  color: var(--text-2);
-  line-height: 1.62;
-  max-width: 72ch;
-  margin: -8px 0 22px;
-}
-
-.diagram {
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-xl);
-  background: var(--panel);
-  padding: 22px 22px 0;
-  box-shadow: var(--shadow-panel);
-  overflow: hidden;
-}
-.diagram svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.diagram figcaption {
-  font-size: var(--text-sm);
-  color: var(--text-3);
-  line-height: 1.6;
-  padding: 18px 2px 22px;
-  border-top: 1px solid var(--hairline);
-  margin-top: 14px;
-  max-width: 82ch;
-}
-.diagram figcaption em {
-  color: var(--text-2);
-  font-style: italic;
-}
-
-/* Below ~900px the 880-unit diagram scales its 12.5-unit labels down to
-   4-8px, which is not readable at any distance. Give the drawing a floor
-   and let it scroll sideways instead of shrinking; the caption stays put. */
-.diagram__hint {
-  display: none;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--text-3);
-}
-
-@media (max-width: 900px) {
-  .diagram {
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-  }
-  .diagram svg {
-    min-width: 720px;
-  }
-  .diagram figcaption {
-    position: sticky;
-    left: 0;
-  }
-  .diagram__hint {
-    display: block;
-    margin-bottom: 8px;
-  }
-}
-
-/* Layer bands */
-.lyr rect {
-  fill: var(--well);
-  stroke: var(--hairline);
-  stroke-width: 1;
-}
-.lyr--kg rect {
-  fill: var(--accent-soft);
-  stroke: var(--accent-border);
-}
-
-.lbl-k {
-  fill: var(--text-3);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-.lbl-h {
-  fill: var(--text-1);
-  font-family: var(--font-sans);
-  font-size: 19px;
-  font-weight: 650;
-  letter-spacing: -0.015em;
-}
-.lbl-s {
-  fill: var(--text-3);
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-}
-
-/* Chips inside the interface band */
-.node rect {
-  fill: var(--panel);
-  stroke: var(--hairline-strong);
-  stroke-width: 1;
-}
-.node text {
-  fill: var(--text-2);
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-  font-weight: 550;
-  text-anchor: middle;
-}
-
-/* Service-layer boxes */
-.box rect {
-  fill: var(--panel);
-  stroke-width: 1;
-}
-.box--tools rect {
-  stroke: var(--kw-violet-border);
-}
-.box--agent rect {
-  stroke: var(--info-border);
-}
-.box--harness rect {
-  fill: var(--well);
-  stroke: var(--kw-cyan-border);
-}
-.box--harness .box-h {
-  fill: var(--kw-cyan);
-}
-.tie--down {
-  stroke-dasharray: 3 3;
-}
-.box-h {
-  fill: var(--text-1);
-  font-family: var(--font-sans);
-  font-size: 14.5px;
-  font-weight: 620;
-}
-.box--tools .box-h {
-  fill: var(--kw-violet);
-}
-.box--agent .box-h {
-  fill: var(--info);
-}
-.box-s {
-  fill: var(--text-2);
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-}
-
-/* Flow arrows */
-.flow path,
-.tie {
-  stroke: var(--hairline-strong);
-  stroke-width: 1.4;
-  fill: none;
-}
-.flow-t {
-  fill: var(--text-3);
-  font-family: var(--font-mono);
-  font-size: 11px;
-}
-#ar path {
-  fill: var(--hairline-strong);
-  stroke: none;
-}
-
-/* Graph motif in the core band */
-.motif line {
-  stroke: var(--accent-border);
-  stroke-width: 1.2;
-}
-.motif circle {
-  fill: var(--text-2);
-  stroke: var(--panel);
-  stroke-width: 1.5;
-}
-
-/* ---------- Research → system map ---------- */
-.col-k {
-  fill: var(--text-3);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-.rnode rect {
-  fill: var(--panel);
-  stroke-width: 1.4;
-}
-.rnode--violet rect {
-  stroke: var(--kw-violet);
-}
-.rnode--info rect {
-  stroke: var(--info);
-}
-.rnode--cyan rect {
-  stroke: var(--kw-cyan);
-}
-.rnode--success rect {
-  stroke: var(--success);
-}
-.rn-h {
-  fill: var(--text-1);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 620;
-}
-.rn-s {
-  fill: var(--text-3);
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-}
-
-.map-edge path {
-  fill: none;
-  stroke-width: 1.6;
-  opacity: 0.55;
-}
-.e-violet {
-  stroke: var(--kw-violet);
-}
-.e-info {
-  stroke: var(--info);
-}
-.e-cyan {
-  stroke: var(--kw-cyan);
-}
-.e-success {
-  stroke: var(--success);
-}
-
-.snode rect {
-  fill: var(--well);
-  stroke: var(--hairline-strong);
-  stroke-width: 1;
-}
-.snode--core rect {
-  fill: var(--accent-soft);
-  stroke: var(--accent-border);
-}
-.sn-h {
-  fill: var(--text-1);
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 620;
-}
-.sn-s {
-  fill: var(--text-3);
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-}
-
-/* ============================================================
-   Metrics strip
-   ============================================================ */
-.metrics {
-  display: grid;
-  margin-bottom: 36px;
-  grid-template-columns: repeat(5, 1fr);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-xl);
-  background: var(--panel);
-  box-shadow: var(--shadow-panel);
-  overflow: hidden;
-}
-
-.metric {
-  padding: 20px 18px;
-  border-right: 1px solid var(--hairline);
-  transition: background 0.15s ease;
-}
-.metric:last-child {
-  border-right: 0;
-}
-.metric:hover {
-  background: var(--row-hover);
-}
-
-.metric__val {
-  font-size: var(--text-2xl);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  font-weight: 680;
-  font-family: var(--font-mono);
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
-}
-.metric__val sup {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--text-3);
-  letter-spacing: 0;
-}
-.metric__label {
-  margin-top: 6px;
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-3);
-  font-weight: 600;
 }
 
 /* ============================================================
@@ -1415,14 +948,14 @@ html[data-theme='light'] .hero::after {
 }
 
 .wcard__lang::before {
-  content: '';
+  content: "";
   width: 8px;
   height: 8px;
   border-radius: 99px;
   background: var(--series-3);
   display: inline-block;
 }
-.wcard__lang[data-lang='Python']::before {
+.wcard__lang[data-lang="Python"]::before {
   background: var(--series-1);
 }
 
@@ -1434,7 +967,7 @@ html[data-theme='light'] .hero::after {
   padding-left: 26px;
 }
 .tl::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 5px;
   top: 8px;
@@ -1451,7 +984,7 @@ html[data-theme='light'] .hero::after {
   padding-bottom: 0;
 }
 .tl__item::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -26px;
   top: 6px;
@@ -1461,7 +994,7 @@ html[data-theme='light'] .hero::after {
   background: var(--panel);
   border: 2px solid var(--hairline-strong);
 }
-.tl__item[data-current='true']::before {
+.tl__item[data-current="true"]::before {
   background: var(--success);
   border-color: var(--success);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 20%, transparent);
@@ -1513,7 +1046,7 @@ html[data-theme='light'] .hero::after {
   position: relative;
 }
 .tl__list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0.62em;
@@ -1568,7 +1101,7 @@ html[data-theme='light'] .hero::after {
   border-color: var(--hairline-strong);
   color: var(--text-1);
 }
-.filter[aria-pressed='true'] {
+.filter[aria-pressed="true"] {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--accent-fg);
@@ -1841,15 +1374,6 @@ html[data-theme='light'] .hero::after {
    Responsive
    ============================================================ */
 @media (max-width: 900px) {
-  .metrics {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .metric:nth-child(3) {
-    border-right: 0;
-  }
-  .metric:nth-child(n + 4) {
-    border-top: 1px solid var(--hairline);
-  }
   .research,
   .awards {
     grid-template-columns: 1fr;
@@ -1909,7 +1433,7 @@ html[data-theme='light'] .hero::after {
       opacity 0.16s ease,
       transform 0.16s ease;
   }
-  .nav__links[data-open='true'] {
+  .nav__links[data-open="true"] {
     opacity: 1;
     transform: none;
     pointer-events: auto;
@@ -1934,22 +1458,6 @@ html[data-theme='light'] .hero::after {
   .hero__tags {
     gap: 6px;
   }
-  .metrics {
-    margin-bottom: 28px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .metric:nth-child(3) {
-    border-right: 1px solid var(--hairline);
-  }
-  .metric:nth-child(2n) {
-    border-right: 0;
-  }
-  .metric:nth-child(n + 3) {
-    border-top: 1px solid var(--hairline);
-  }
-  .metric:last-child {
-    grid-column: 1 / -1;
-  }
   .pub {
     grid-template-columns: 1fr;
     gap: 6px;
@@ -1967,7 +1475,6 @@ html[data-theme='light'] .hero::after {
    Print — the CV is the artefact; this just makes the page sane
    ============================================================ */
 @media print {
-  .hero__canvas,
   .nav,
   .hero__actions,
   .contact__actions,

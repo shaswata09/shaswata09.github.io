@@ -21,27 +21,35 @@
 
   /* ── Config ───────────────────────────────────────────────── */
   var NODE_COUNT_MAX = 1040
-  var SPHERE_FILL = 0.605
+  // datasets_ui paints this on a full-viewport canvas, where the sphere's
+  // silhouette runs off-screen and you only ever see its dense middle. This
+  // canvas is just the hero, so at the original 0.605 the whole ball fit
+  // inside it — outline, horizon and all, which is what read as a disco
+  // ball. Oversize it instead and let the edges leave the frame.
+  var SPHERE_FILL = 1.75
   var CONNECT_DIST = 0.22
-  var ROTATE_SPEED = 0.0008
-  var MOUSE_INFLUENCE = 0.00004
-  var PERSPECTIVE = 800
+  var ROTATE_SPEED = 0.0002
+  var MOUSE_INFLUENCE = 0.000012
+  // Ratio, not pixels. datasets_ui used 800 against a 544px radius; keeping
+  // that proportion holds the perspective identical at any size, and stops
+  // `PERSPECTIVE + z * radius` going negative (which inverts the far half).
+  var PERSPECTIVE_RATIO = 1.47
   var GLOW_COUNT = 5
   var GLOW_RADIUS = 1.28
-  var GLOW_DRIFT = 0.0224
-  var WIND_CHANCE = 0.003
-  var WIND_STRENGTH = 0.08
+  var GLOW_DRIFT = 0.0062
+  var WIND_CHANCE = 0.001
+  var WIND_STRENGTH = 0.03
   var WIND_DECAY = 0.96
-  var BRIGHTNESS_LERP = 0.15
-  var PULSE_INTERVAL = 200
-  var PULSE_SPEED = 0.016
+  var BRIGHTNESS_LERP = 0.06
+  var PULSE_INTERVAL = 430
+  var PULSE_SPEED = 0.0045
   var PULSE_WIDTH = 0.28
-  var PULSE_TRAIL_DECAY = 0.06
-  var BREATH_SPEED = 0.004
+  var PULSE_TRAIL_DECAY = 0.022
+  var BREATH_SPEED = 0.0011
   var BREATH_AMOUNT = 0.02
   var SORT_INTERVAL = 3
   var DUST_COUNT = 35
-  var TEMP_CYCLE_SPEED = 0.0003
+  var TEMP_CYCLE_SPEED = 0.00009
   var NODE_SIZES = [0.85, 0.95, 1.0, 1.0, 1.1]
 
   /* ── Palette ──────────────────────────────────────────────────
@@ -315,6 +323,7 @@
       var time = s.frame * 0.01
       var breathScale = 1 + Math.sin(s.frame * BREATH_SPEED) * BREATH_AMOUNT
       var radius = Math.min(w, h) * SPHERE_FILL * breathScale
+      var perspective = radius * PERSPECTIVE_RATIO
       var temp = Math.sin(s.frame * TEMP_CYCLE_SPEED)
       var AN = pal.alphaNode
       var AE = pal.alphaEdge
@@ -327,7 +336,7 @@
         var z1 = n.sx * sinY + n.sz * cosY
         var y1 = n.sy * cosX - z1 * sinX
         var z2 = n.sy * sinX + z1 * cosX
-        var pScale = PERSPECTIVE / (PERSPECTIVE + z2 * radius)
+        var pScale = perspective / (perspective + z2 * radius)
         n.px = cx + x1 * radius * pScale
         n.py = cy + y1 * radius * pScale
         n.scale = pScale
