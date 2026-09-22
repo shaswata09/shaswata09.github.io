@@ -152,6 +152,22 @@
     })
   }
 
+  /* ---------- "Last updated" stamp ----------
+     Hover and focus are handled in CSS; this is only for touch, where
+     there is no hover and a tap has to do the work. */
+  var stamp = document.querySelector('.stamp')
+  if (stamp) {
+    stamp.addEventListener('click', function () {
+      stamp.setAttribute(
+        'aria-expanded',
+        stamp.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+      )
+    })
+    document.addEventListener('click', function (e) {
+      if (!stamp.contains(e.target)) stamp.setAttribute('aria-expanded', 'false')
+    })
+  }
+
   /* ---------- Footer year ---------- */
   var year = document.getElementById('year')
   if (year) year.textContent = String(new Date().getFullYear())

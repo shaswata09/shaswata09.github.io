@@ -58,7 +58,6 @@
     <header class="nav" id="nav">
       <div class="nav__inner">
         <a class="nav__brand" href="index.html">
-          <span class="nav__mark" aria-hidden="true">SM</span>
           <span>Shaswata Mitra</span>
         </a>
 
@@ -321,7 +320,19 @@
 
     <footer class="footer">
       <div class="wrap footer__inner">
-        <span>© <span id="year">2026</span> Shaswata Mitra</span>
+        <span class="footer__meta">
+          <span>© <span id="year">2026</span> Shaswata Mitra</span>
+          <!-- Hard-coded on purpose: a "last updated" derived from the clock
+               would claim today's date on a page that has not changed. Edit
+               this string (in every page's footer) when the site is revised. -->
+          <button class="stamp" type="button" aria-expanded="false">
+            <svg class="stamp__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 16v-4M12 8h.01" />
+            </svg>
+            <span class="stamp__label">Last updated September 2026</span>
+          </button>
+        </span>
         <nav class="footer__links" aria-label="Profiles">
           <a href="https://scholar.google.com/citations?user=drsx2nkAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
           <a href="https://github.com/shaswata09" target="_blank" rel="noopener">GitHub</a>

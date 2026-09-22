@@ -453,21 +453,6 @@ ol {
   flex: none;
 }
 
-.nav__mark {
-  width: 26px;
-  height: 26px;
-  border-radius: var(--radius-sm);
-  background: var(--accent);
-  color: var(--accent-fg);
-  display: grid;
-  place-items: center;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  flex: none;
-}
-
 .nav__links {
   display: flex;
   align-items: center;
@@ -1344,6 +1329,90 @@ html[data-theme="light"] .icon-btn__moon {
   display: flex;
   gap: 16px;
 }
+
+/* ---------- "Last updated" stamp ----------
+   A square icon button that widens into a capsule. The label is always in
+   the accessibility tree — it is clipped by max-width, never display:none —
+   so a screen reader reads the whole thing without any expansion. */
+.footer__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--text-3);
+  font: inherit;
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease,
+    background 0.18s ease,
+    gap 0.24s ease;
+}
+
+.stamp__ico {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin-inline: 5px;
+}
+
+/* The capsule grows by unclipping the label, so there is no layout jump on
+   the rest of the footer until it actually opens. */
+.stamp__label {
+  max-width: 0;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    max-width 0.28s ease,
+    opacity 0.2s ease,
+    padding-right 0.28s ease;
+  padding-right: 0;
+}
+
+.stamp:hover,
+.stamp:focus-visible,
+.stamp[aria-expanded='true'] {
+  border-color: var(--hairline-strong);
+  color: var(--text-1);
+  background: var(--accent-soft);
+}
+
+.stamp:hover .stamp__label,
+.stamp:focus-visible .stamp__label,
+.stamp[aria-expanded='true'] .stamp__label {
+  max-width: 30ch;
+  opacity: 1;
+  padding-right: 10px;
+}
+
+/* No hover on touch, so the tap (which toggles aria-expanded) is the way in. */
+@media (hover: none) {
+  .stamp:hover .stamp__label {
+    max-width: 0;
+    opacity: 0;
+    padding-right: 0;
+  }
+  .stamp[aria-expanded='true'] .stamp__label {
+    max-width: 30ch;
+    opacity: 1;
+    padding-right: 10px;
+  }
+}
 .footer__links a:hover {
   color: var(--text-1);
 }
@@ -1412,6 +1481,13 @@ html[data-theme="light"] .icon-btn__moon {
   .nav__burger {
     display: grid;
   }
+  /* .nav__links carried the `margin-left: auto` that pushed everything after
+     it to the right edge. Below this width it becomes position:fixed and
+     leaves the flow, so the actions need to claim that space themselves —
+     otherwise the burger and theme toggle bunch up against the brand. */
+  .nav__actions {
+    margin-left: auto;
+  }
   .nav__links {
     position: fixed;
     top: var(--nav-h);
@@ -1441,6 +1517,24 @@ html[data-theme="light"] .icon-btn__moon {
   .nav__link {
     padding: 11px 12px;
     font-size: var(--text-base);
+  }
+
+  /* On a phone the 150px plate plus a four-line address block pushed the
+     name down ~280px, so the first thing on screen was a photo and a
+     postal address. Lay them out as one compact identity row instead. */
+  .hero__side {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero__plate {
+    width: 84px;
+    flex: none;
+  }
+  .hero__affil {
+    margin-top: 0;
+    text-align: left;
   }
   .section {
     padding-block: 56px;
