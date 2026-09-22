@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — Shaswata Mitra</title>
+    <meta name="description" content="Applied projects where Shaswata Mitra puts research to work — jojo, a local-first agentic assistant built on a knowledge graph, with its system architecture and the research threads behind it." />
+    <meta name="author" content="Shaswata Mitra" />
+    <link rel="canonical" href="https://shaswata09.github.io/projects.html" />
+
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Projects — Shaswata Mitra" />
+    <meta property="og:description" content="jojo — a local-first agentic assistant built on a knowledge graph, and the research behind it." />
+    <meta property="og:url" content="https://shaswata09.github.io/projects.html" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='ui-monospace,monospace' font-size='15' font-weight='700' fill='%23fafafa' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script>
+      // Resolve the theme before first paint so there is no light/dark flash.
+      // Mirrors readPref() in assets/js/main.js — keep the storage key and the
+      // dark fallback in sync across both.
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('sm.theme')
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : stored === 'system'
+                ? window.matchMedia('(prefers-color-scheme: dark)').matches
+                  ? 'dark'
+                  : 'light'
+                : 'dark'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme
+        } catch (e) {
+          /* private mode / storage blocked — the dark default on <html> stands */
+        }
+      })()
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========================= NAV ========================= -->
+    <header class="nav" id="nav">
+      <div class="nav__inner">
+        <a class="nav__brand" href="index.html">
+          <span class="nav__mark" aria-hidden="true">SM</span>
+          <span>Shaswata Mitra</span>
+        </a>
+
+        <nav class="nav__links" id="nav-menu" aria-label="Sections">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="news.html">News</a>
+          <a class="nav__link" href="research.html">Research</a>
+          <a class="nav__link" href="experience.html">Experience</a>
+          <a class="nav__link" href="service.html">Teaching &amp; Service</a>
+          <a class="nav__link" href="projects.html" aria-current="page">Projects</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav__actions">
+          <button
+            class="icon-btn nav__burger"
+            id="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+          >
+            <svg class="nav__burger-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="nav__burger-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+          <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle colour theme" title="Toggle theme">
+            <svg class="icon-btn__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="icon-btn__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="page">
+      <!-- ========================= PROJECTS ========================= -->
+      <section class="section" id="projects">
+        <div class="wrap">
+          <div class="section__head">
+            <div>
+              <p class="eyebrow" style="margin-bottom: 8px">Applied</p>
+              <h2 class="section__title">Projects</h2>
+            </div>
+            <p class="section__note">Research put to work on something I actually use</p>
+          </div>
+
+          <p class="lede-note reveal">
+            I build these for two reasons. The first is that they are <em>fun</em> — a paper deadline is
+            not the only good reason to write code. The second is that carrying a research idea all the
+            way to something a person actually uses is where you find out how it really applies, and what
+            it really costs: a knowledge graph, an agent loop and a review gate all behave differently
+            once someone depends on them daily, and none of those lessons arrive in a benchmark.
+          </p>
+
+          <!-- ---------- jojo ---------- -->
+          <article class="pcard reveal">
+            <div class="pcard__head">
+              <div class="pcard__ico pcard__ico--art" aria-hidden="true">
+                <svg viewBox="0 0 512 512">
+                  <rect width="512" height="512" rx="115" fill="#171717" />
+                  <rect x="8" y="200" width="56" height="112" rx="21" fill="#aeb6bf" />
+                  <rect x="8" y="200" width="24" height="112" rx="21" fill="#98a1ab" />
+                  <rect x="448" y="200" width="56" height="112" rx="21" fill="#aeb6bf" />
+                  <rect x="480" y="200" width="24" height="112" rx="21" fill="#98a1ab" />
+                  <rect x="46" y="117" width="420" height="278" rx="133" fill="#e6e7e8" />
+                  <path d="M179 117C106 117 46 179 46 251v10c0 72 60 134 133 134h-8c-73 0-89-62-89-134v-10c0-72 16-134 89-134z" fill="#d3d5d7" />
+                  <rect x="106" y="153" width="300" height="206" rx="99" fill="#57596b" />
+                  <path d="M205 153c-55 0-99 46-99 99v8c0 53 44 99 99 99h-17c-55 0-32-46-32-99v-8c0-53-23-99 32-99z" fill="#43455a" />
+                  <circle cx="196" cy="256" r="41" fill="#71dcef" />
+                  <path d="M196 215a41 41 0 0 0 0 82 41 41 0 0 1 0-82z" fill="#5ccbe0" />
+                  <circle cx="316" cy="256" r="41" fill="#71dcef" />
+                  <path d="M316 215a41 41 0 0 0 0 82 41 41 0 0 1 0-82z" fill="#5ccbe0" />
+                </svg>
+              </div>
+              <div class="pcard__id">
+                <h3 class="pcard__name">jojo</h3>
+                <p class="pcard__tag">Jarvis fOr Job Organization — a local-first agentic assistant</p>
+              </div>
+              <div class="pcard__links">
+                <a class="btn btn--primary" href="https://shaswata09.github.io/jojo/" target="_blank" rel="noopener">
+                  Open app
+                </a>
+                <a class="btn btn--ghost" href="https://shaswata09.github.io/jojo/guide" target="_blank" rel="noopener">
+                  Guide
+                </a>
+                <a class="btn btn--ghost" href="https://github.com/shaswata09/jojo" target="_blank" rel="noopener">
+                  Source
+                </a>
+              </div>
+            </div>
+
+            <p class="pcard__desc">
+              A job tracker you can talk to and hand work to. Connect a model and it answers questions
+              about your search, drafts the follow-ups, and proposes the notes, tags and reminders you
+              have not got round to. Everything runs on your own machine — no account, no backend, and
+              records stay in the browser unless you point it at a cloud model yourself.
+              <strong>Every change the agent wants to make is shown for review first, and goes through
+              the same undo a button press does.</strong>
+            </p>
+
+            <div class="pcard__tags">
+              <span class="chip chip--violet">Knowledge graph</span>
+              <span class="chip chip--info">Agentic orchestration</span>
+              <span class="chip chip--cyan">Local-first</span>
+              <span class="chip">React · TypeScript</span>
+              <span class="chip">Apache-2.0</span>
+            </div>
+          </article>
+
+          <!-- ---------- Architecture ---------- -->
+          <div class="diagram-block reveal">
+            <p class="subhead">System architecture</p>
+            <p class="diagram-note">
+              Three layers, and the import rule that keeps them honest: dependencies point strictly
+              downward. The interface knows about the service layer; the service layer knows about the
+              graph; the graph knows about neither.
+            </p>
+
+            <figure class="diagram">
+              <svg viewBox="0 0 880 580" role="img" aria-labelledby="arch-t arch-d">
+                <title id="arch-t">jojo system architecture</title>
+                <desc id="arch-d">
+                  Three stacked layers. At the top, the interface: React web and mobile clients with
+                  board, detail, assistant and settings views. In the middle, the service layer,
+                  split between a schema-validated tool surface and agentic orchestration that plans,
+                  executes and proposes, both sitting on an agent harness that holds the loop to a
+                  budget, compacts its context, repairs malformed calls, detects when it is stuck and
+                  verifies before it is allowed to exit. At the core, a knowledge graph of fourteen
+                  node types and seven relations, persisted locally, which every layer above reads and
+                  writes through a single transaction boundary.
+                </desc>
+
+                <!-- ============ L1 · Interface ============ -->
+                <g class="lyr lyr--ui">
+                  <rect x="40" y="26" width="800" height="104" rx="12" />
+                  <text class="lbl-k" x="62" y="52">LAYER 1</text>
+                  <text class="lbl-h" x="62" y="76">Interface</text>
+                  <text class="lbl-s" x="62" y="98">React · web and mobile clients</text>
+                  <g class="node">
+                    <rect x="404" y="52" width="96" height="30" rx="6" />
+                    <text x="452" y="72">Board</text>
+                    <rect x="512" y="52" width="96" height="30" rx="6" />
+                    <text x="560" y="72">Detail</text>
+                    <rect x="620" y="52" width="96" height="30" rx="6" />
+                    <text x="668" y="72">Assistant</text>
+                    <rect x="728" y="52" width="88" height="30" rx="6" />
+                    <text x="772" y="72">Settings</text>
+                  </g>
+                  <text class="lbl-s" x="452" y="106" text-anchor="start">
+                    the only layer allowed to import React
+                  </text>
+                </g>
+
+                <!-- flow: UI ⇄ service -->
+                <g class="flow">
+                  <path d="M440 130 L440 172" marker-end="url(#ar)" />
+                  <text class="flow-t" x="452" y="158">calls tools</text>
+                  <path d="M336 172 L336 130" marker-end="url(#ar)" />
+                  <text class="flow-t" x="324" y="158" text-anchor="end">renders state</text>
+                </g>
+
+                <!-- ============ L2 · Service ============ -->
+                <g class="lyr lyr--svc">
+                  <rect x="40" y="176" width="800" height="244" rx="12" />
+                  <text class="lbl-k" x="62" y="202">LAYER 2</text>
+                  <text class="lbl-h" x="62" y="226">Service layer</text>
+                  <text class="lbl-s" x="62" y="248">backend logic · agent loop</text>
+
+                  <g class="box box--tools">
+                    <rect x="300" y="196" width="248" height="124" rx="10" />
+                    <text class="box-h" x="322" y="222">Tool surface</text>
+                    <text class="box-s" x="322" y="244">Named, schema-validated</text>
+                    <text class="box-s" x="322" y="262">commands. Defined outside</text>
+                    <text class="box-s" x="322" y="280">React, run inside one</text>
+                    <text class="box-s" x="322" y="298">transaction.</text>
+                  </g>
+
+                  <g class="box box--agent">
+                    <rect x="568" y="196" width="248" height="124" rx="10" />
+                    <text class="box-h" x="590" y="222">Agentic orchestration</text>
+                    <text class="box-s" x="590" y="244">Plan → execute → propose.</text>
+                    <text class="box-s" x="590" y="262">Budgeted, compacted, and</text>
+                    <text class="box-s" x="590" y="280">every write surfaced for</text>
+                    <text class="box-s" x="590" y="298">review before it lands.</text>
+                  </g>
+
+                  <path class="tie" d="M548 258 L568 258" marker-end="url(#ar)" />
+
+                  <g class="box box--harness">
+                    <rect x="300" y="330" width="516" height="72" rx="10" />
+                    <text class="box-h" x="322" y="356">Agent harness</text>
+                    <text class="box-s" x="322" y="378">budget · compaction · schema repair · stuck detection · pre-exit verify gate</text>
+                    <text class="box-s" x="322" y="394">maxSteps is a hard stop; destructive calls go through human approval</text>
+                  </g>
+
+                  <path class="tie tie--down" d="M424 320 L424 330" />
+                  <path class="tie tie--down" d="M692 320 L692 330" />
+                </g>
+
+                <!-- flow: service ⇄ graph -->
+                <g class="flow">
+                  <path d="M440 420 L440 462" marker-end="url(#ar)" />
+                  <text class="flow-t" x="452" y="448">one transaction</text>
+                  <path d="M336 462 L336 420" marker-end="url(#ar)" />
+                  <text class="flow-t" x="324" y="448" text-anchor="end">journalled delta</text>
+                </g>
+
+                <!-- ============ L3 · Knowledge graph ============ -->
+                <g class="lyr lyr--kg">
+                  <rect x="40" y="466" width="800" height="92" rx="12" />
+                  <text class="lbl-k" x="62" y="492">CORE</text>
+                  <text class="lbl-h" x="62" y="516">Knowledge graph</text>
+                  <text class="lbl-s" x="62" y="538">14 node types · 7 relations · local-first store</text>
+
+                  <!-- a small graph motif, because the layer IS a graph -->
+                  <g class="motif">
+                    <line x1="600" y1="482" x2="662" y2="512" />
+                    <line x1="662" y1="512" x2="726" y2="488" />
+                    <line x1="662" y1="512" x2="700" y2="542" />
+                    <line x1="726" y1="488" x2="790" y2="516" />
+                    <line x1="600" y1="482" x2="612" y2="532" />
+                    <line x1="612" y1="532" x2="700" y2="542" />
+                    <circle cx="600" cy="482" r="6" />
+                    <circle cx="662" cy="512" r="8" />
+                    <circle cx="726" cy="488" r="6" />
+                    <circle cx="700" cy="542" r="6" />
+                    <circle cx="790" cy="516" r="6" />
+                    <circle cx="612" cy="532" r="5" />
+                  </g>
+                </g>
+
+                <defs>
+                  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M0 0 L10 5 L0 10 z" />
+                  </marker>
+                </defs>
+              </svg>
+              <figcaption>
+                <span class="diagram__hint">Scroll the diagram sideways to read it →</span>
+                Imports point strictly downward, enforced in CI rather than by good intentions. The
+                graph layer knows nothing about React, and the storage layer knows nothing about what
+                an application <em>is</em> — it moves opaque blobs and a primary key.
+              </figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <span>© <span id="year">2026</span> Shaswata Mitra</span>
+        <nav class="footer__links" aria-label="Profiles">
+          <a href="https://scholar.google.com/citations?user=drsx2nkAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://github.com/shaswata09" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/shaswatamitra" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:smitra3@ua.edu">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

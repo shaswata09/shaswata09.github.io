@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teaching &amp; Service — Shaswata Mitra</title>
+    <meta name="description" content="Guest lecturing at The University of Alabama and Mississippi State, peer review across IEEE TIFS, ICMLA, AAAI and ESORICS, and program-committee and session-chair roles." />
+    <meta name="author" content="Shaswata Mitra" />
+    <link rel="canonical" href="https://shaswata09.github.io/service.html" />
+
+    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Teaching &amp; Service — Shaswata Mitra" />
+    <meta property="og:description" content="Guest lecturing, peer review, and program-committee roles." />
+    <meta property="og:url" content="https://shaswata09.github.io/service.html" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='ui-monospace,monospace' font-size='15' font-weight='700' fill='%23fafafa' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <script>
+      // Resolve the theme before first paint so there is no light/dark flash.
+      // Mirrors readPref() in assets/js/main.js — keep the storage key and the
+      // dark fallback in sync across both.
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('sm.theme')
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : stored === 'system'
+                ? window.matchMedia('(prefers-color-scheme: dark)').matches
+                  ? 'dark'
+                  : 'light'
+                : 'dark'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme
+        } catch (e) {
+          /* private mode / storage blocked — the dark default on <html> stands */
+        }
+      })()
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========================= NAV ========================= -->
+    <header class="nav" id="nav">
+      <div class="nav__inner">
+        <a class="nav__brand" href="index.html">
+          <span class="nav__mark" aria-hidden="true">SM</span>
+          <span>Shaswata Mitra</span>
+        </a>
+
+        <nav class="nav__links" id="nav-menu" aria-label="Sections">
+          <a class="nav__link" href="index.html">Home</a>
+          <a class="nav__link" href="news.html">News</a>
+          <a class="nav__link" href="research.html">Research</a>
+          <a class="nav__link" href="experience.html">Experience</a>
+          <a class="nav__link" href="service.html" aria-current="page">Teaching &amp; Service</a>
+          <a class="nav__link" href="projects.html">Projects</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav__actions">
+          <button
+            class="icon-btn nav__burger"
+            id="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+          >
+            <svg class="nav__burger-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg class="nav__burger-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+          <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle colour theme" title="Toggle theme">
+            <svg class="icon-btn__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="icon-btn__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="page">
+      <!-- ========================= REVIEWING ========================= -->
+      <section class="section" id="service">
+        <div class="wrap">
+          <div class="section__head">
+            <div>
+              <p class="eyebrow" style="margin-bottom: 8px">Community</p>
+              <h2 class="section__title">Teaching &amp; Service</h2>
+            </div>
+          </div>
+
+          <div class="split">
+            <div>
+              <p class="subhead">Teaching</p>
+              <div class="tl">
+                <div class="tl__item reveal">
+                  <div class="tl__head">
+                    <h3 class="tl__org">CS-591 — AI for Cyber Security</h3>
+                    <span class="tl__date">Fall 2025</span>
+                  </div>
+                  <p class="tl__role">Guest Lecturer <span>· The University of Alabama</span></p>
+                  <ul class="tl__list">
+                    <li>
+                      Deep learning for threat classification, multi-modal learning, and
+                      language-model alignment for knowledge contextualization.
+                    </li>
+                  </ul>
+                </div>
+                <div class="tl__item reveal">
+                  <div class="tl__head">
+                    <h3 class="tl__org">CSE-6643 — AI-Robotics</h3>
+                    <span class="tl__date">Fall 2024</span>
+                  </div>
+                  <p class="tl__role">Guest Lecturer <span>· Mississippi State (NSF-supported)</span></p>
+                  <ul class="tl__list">
+                    <li>AI-robotics design, human-computer interaction, and security practice.</li>
+                  </ul>
+                </div>
+                <div class="tl__item reveal">
+                  <div class="tl__head">
+                    <h3 class="tl__org">CSE-6643 — AI-Robotics</h3>
+                    <span class="tl__date">Spring 2024</span>
+                  </div>
+                  <p class="tl__role">Guest Lecturer <span>· Mississippi State (NSF-supported)</span></p>
+                  <ul class="tl__list">
+                    <li>AI-robotics design, human-computer interaction, and security practice.</li>
+                  </ul>
+                </div>
+                <div class="tl__item reveal">
+                  <div class="tl__head">
+                    <h3 class="tl__org">CSE-6990 — AI for Cybersecurity</h3>
+                    <span class="tl__date">Fall 2023</span>
+                  </div>
+                  <p class="tl__role">In-Class Tutorial Mentor <span>· Mississippi State</span></p>
+                  <ul class="tl__list">
+                    <li>Led tool setup, discussion and feedback for hands-on sessions.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p class="subhead">Program committee &amp; chairing</p>
+              <div class="rows reveal">
+                <div class="row">
+                  <span class="row__k">2024–26</span>
+                  <span class="row__v">
+                    <strong>Program Committee</strong>
+                    IEEE International Conference on Big Data — BigCyber Workshop
+                  </span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2024</span>
+                  <span class="row__v">
+                    <strong>Session Chair</strong>
+                    IEEE BigData — BigCyber Special Session
+                  </span>
+                </div>
+              </div>
+
+              <p class="subhead" style="margin-top: 44px">Peer review</p>
+              <div class="rows reveal">
+                <div class="row">
+                  <span class="row__k">2026</span>
+                  <span class="row__v">
+                    <strong>IEEE Transactions on Information Forensics and Security</strong>
+                  </span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2026</span>
+                  <span class="row__v"><strong>IEEE ICMLA</strong></span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2025</span>
+                  <span class="row__v"><strong>AAAI</strong></span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2025</span>
+                  <span class="row__v"><strong>ESORICS</strong></span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2024</span>
+                  <span class="row__v"><strong>AAAI</strong></span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2024</span>
+                  <span class="row__v"><strong>WITS</strong></span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2023</span>
+                  <span class="row__v"><strong>IEEE Access</strong></span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2022</span>
+                  <span class="row__v"><strong>IEEE BigData</strong></span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2022</span>
+                  <span class="row__v"><strong>ACM CODASPY</strong></span>
+                </div>
+                <div class="row">
+                  <span class="row__k">2021</span>
+                  <span class="row__v"><strong>IEEE BigData</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <span>© <span id="year">2026</span> Shaswata Mitra</span>
+        <nav class="footer__links" aria-label="Profiles">
+          <a href="https://scholar.google.com/citations?user=drsx2nkAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://github.com/shaswata09" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/shaswatamitra" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:smitra3@ua.edu">Email</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
