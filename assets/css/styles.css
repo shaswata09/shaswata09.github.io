@@ -1235,6 +1235,16 @@ html[data-theme="light"] .icon-btn__moon {
   display: block;
   margin-bottom: 1px;
 }
+.row__v a {
+  color: var(--text-1);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--hairline-strong);
+  transition: text-decoration-color 0.15s ease;
+}
+.row__v a:hover {
+  text-decoration-color: var(--text-1);
+}
 
 /* Mentoring grid */
 .mentees {
