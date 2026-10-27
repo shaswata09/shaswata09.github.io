@@ -4,20 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Research — Shaswata Mitra</title>
-    <meta name="description" content="The publication record of Shaswata Mitra — 30 journal articles, conference papers and pre-prints across IEEE BigData, ICMLA, IJCNN, CAI, CIC, IEEE Access and ACM Transactions." />
+    <meta
+      name="description"
+      content="The publication record of Shaswata Mitra — 30 journal articles, conference papers and pre-prints across IEEE BigData, ICMLA, IJCNN, CAI, CIC, IEEE Access and ACM Transactions."
+    />
     <meta name="author" content="Shaswata Mitra" />
     <link rel="canonical" href="https://shaswata09.github.io/research.html" />
 
-    <meta name="theme-color" content="#f5f5f5" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="theme-color"
+      content="#f5f5f5"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0a0a0a"
+      media="(prefers-color-scheme: dark)"
+    />
 
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Research — Shaswata Mitra" />
-    <meta property="og:description" content="30 publications across journals, conferences and pre-prints." />
-    <meta property="og:url" content="https://shaswata09.github.io/research.html" />
+    <meta
+      property="og:description"
+      content="30 publications across journals, conferences and pre-prints."
+    />
+    <meta
+      property="og:url"
+      content="https://shaswata09.github.io/research.html"
+    />
     <meta name="twitter:card" content="summary" />
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='ui-monospace,monospace' font-size='15' font-weight='700' fill='%23fafafa' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ctext x='16' y='22' font-family='ui-monospace,monospace' font-size='15' font-weight='700' fill='%23fafafa' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,23 +51,23 @@
       // Resolve the theme before first paint so there is no light/dark flash.
       // Mirrors readPref() in assets/js/main.js — keep the storage key and the
       // dark fallback in sync across both.
-      ;(function () {
+      (function () {
         try {
-          var stored = localStorage.getItem('sm.theme')
+          var stored = localStorage.getItem("sm.theme");
           var theme =
-            stored === 'light' || stored === 'dark'
+            stored === "light" || stored === "dark"
               ? stored
-              : stored === 'system'
-                ? window.matchMedia('(prefers-color-scheme: dark)').matches
-                  ? 'dark'
-                  : 'light'
-                : 'dark'
-          document.documentElement.dataset.theme = theme
-          document.documentElement.style.colorScheme = theme
+              : stored === "system"
+                ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                  ? "dark"
+                  : "light"
+                : "dark";
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
         } catch (e) {
           /* private mode / storage blocked — the dark default on <html> stands */
         }
-      })()
+      })();
     </script>
   </head>
 
@@ -64,7 +84,9 @@
         <nav class="nav__links" id="nav-menu" aria-label="Sections">
           <a class="nav__link" href="index.html">Home</a>
           <a class="nav__link" href="news.html">News</a>
-          <a class="nav__link" href="research.html" aria-current="page">Research</a>
+          <a class="nav__link" href="research.html" aria-current="page"
+            >Research</a
+          >
           <a class="nav__link" href="experience.html">Experience</a>
           <a class="nav__link" href="service.html">Teaching &amp; Service</a>
           <!-- Projects — hidden for the job-market version of the site. The page
@@ -82,19 +104,60 @@
             aria-expanded="false"
             aria-controls="nav-menu"
           >
-            <svg class="nav__burger-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <svg
+              class="nav__burger-open"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
               <path d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <svg class="nav__burger-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <svg
+              class="nav__burger-close"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
               <path d="M6 6l12 12M18 6L6 18" />
             </svg>
           </button>
-          <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle colour theme" title="Toggle theme">
-            <svg class="icon-btn__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <button
+            class="icon-btn"
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle colour theme"
+            title="Toggle theme"
+          >
+            <svg
+              class="icon-btn__sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
               <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+              />
             </svg>
-            <svg class="icon-btn__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg
+              class="icon-btn__moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
           </button>
@@ -111,22 +174,50 @@
               <p class="eyebrow" style="margin-bottom: 8px">Publications</p>
               <h2 class="section__title">Selected publications</h2>
             </div>
-            <a class="section__note" href="https://scholar.google.com/citations?user=drsx2nkAAAAJ&hl=en" target="_blank" rel="noopener"
+            <a
+              class="section__note"
+              href="https://scholar.google.com/citations?user=drsx2nkAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener"
               >Full list on Google Scholar →</a
             >
           </div>
 
-          <div class="pubbar" role="group" aria-label="Filter publications by type">
-            <button class="filter" type="button" data-filter="all" aria-pressed="true">
+          <div
+            class="pubbar"
+            role="group"
+            aria-label="Filter publications by type"
+          >
+            <button
+              class="filter"
+              type="button"
+              data-filter="all"
+              aria-pressed="true"
+            >
               All <span class="filter__n">31</span>
             </button>
-            <button class="filter" type="button" data-filter="journal" aria-pressed="false">
+            <button
+              class="filter"
+              type="button"
+              data-filter="journal"
+              aria-pressed="false"
+            >
               Journal <span class="filter__n">3</span>
             </button>
-            <button class="filter" type="button" data-filter="conference" aria-pressed="false">
+            <button
+              class="filter"
+              type="button"
+              data-filter="conference"
+              aria-pressed="false"
+            >
               Conference <span class="filter__n">19</span>
             </button>
-            <button class="filter" type="button" data-filter="preprint" aria-pressed="false">
+            <button
+              class="filter"
+              type="button"
+              data-filter="preprint"
+              aria-pressed="false"
+            >
               Pre-print <span class="filter__n">9</span>
             </button>
           </div>
@@ -137,12 +228,17 @@
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2610.07657" target="_blank" rel="noopener"
-                    >Where Rules End and Judges Begin: Measuring the Judgment Boundary in Multi-Agent Systems Security</a
+                  <a
+                    href="https://arxiv.org/abs/2610.07657"
+                    target="_blank"
+                    rel="noopener"
+                    >Where Rules End and Judges Begin: Measuring the Judgment
+                    Boundary in Multi-Agent Systems Security</a
                   >
                 </h3>
                 <p class="pub__authors">
-                  <b>S. Mitra</b>, R. Patel, S. Neupane, S. Mittal, M. R. Rahman, S. Rahimi
+                  <b>S. Mitra</b>, R. Patel, S. Neupane, S. Mittal, M. R.
+                  Rahman, S. Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE ACSAC — AIDC</span>
@@ -151,16 +247,21 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2606.01442" target="_blank" rel="noopener"
-                    >The Value of Spike Timing: A Leakage-Resistant Benchmark of SNN Design Choices for Network Intrusion Detection</a
+                  <a
+                    href="https://arxiv.org/abs/2606.01442"
+                    target="_blank"
+                    rel="noopener"
+                    >The Value of Spike Timing: A Leakage-Resistant Benchmark of
+                    SNN Design Choices for Network Intrusion Detection</a
                   >
                 </h3>
                 <p class="pub__authors">
-                  R. Patel, <b>S. Mitra</b>, D. Amebley, T. Akinrele, S. Dibbo, S. Rahimi
+                  R. Patel, <b>S. Mitra</b>, D. Amebley, T. Akinrele, S. Dibbo,
+                  S. Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE CogMI</span>
@@ -168,14 +269,21 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2508.18684" target="_blank" rel="noopener">FALCON: Autonomous Cyber Threat Intelligence Mining with LLMs for IDS Rule Generation</a>
+                  <a
+                    href="https://arxiv.org/abs/2508.18684"
+                    target="_blank"
+                    rel="noopener"
+                    >FALCON: Autonomous Cyber Threat Intelligence Mining with
+                    LLMs for IDS Rule Generation</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  <b>S. Mitra</b>, S. Neupane, M. Duclos, S. Mittal, A. Piplai, M. R. Rahman, E. Zieglar, S. Rahimi
+                  <b>S. Mitra</b>, S. Neupane, M. Duclos, S. Mittal, A. Piplai,
+                  M. R. Rahman, E. Zieglar, S. Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE CIC</span>
@@ -185,14 +293,21 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2607.18725" target="_blank" rel="noopener">Find Before You Fine-Tune: A Diagnostic Study of Small LLMs for Cybersecurity QA</a>
+                  <a
+                    href="https://arxiv.org/abs/2607.18725"
+                    target="_blank"
+                    rel="noopener"
+                    >Find Before You Fine-Tune: A Diagnostic Study of Small LLMs
+                    for Cybersecurity QA</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  <b>S. Mitra</b>, S. Neupane, T. Chakraborty, H. Tripathi, S. Mittal, S. Rahimi, A. Piplai
+                  <b>S. Mitra</b>, S. Neupane, T. Chakraborty, H. Tripathi, S.
+                  Mittal, S. Rahimi, A. Piplai
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE ICMLA</span>
@@ -200,39 +315,58 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2606.18325" target="_blank" rel="noopener">Agentra: A Supervisable Multi-Agent Framework for Enterprise Intrusion Response</a>
+                  <a
+                    href="https://arxiv.org/abs/2606.18325"
+                    target="_blank"
+                    rel="noopener"
+                    >Agentra: A Supervisable Multi-Agent Framework for
+                    Enterprise Intrusion Response</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  R. Patel, <b>S. Mitra</b>, M. Guida, S. Iannucci, S. Mittal, S. Rahimi
+                  R. Patel, <b>S. Mitra</b>, M. Guida, S. Iannucci, S. Mittal,
+                  S. Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE ICMLA</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2606.18166" target="_blank" rel="noopener">Evaluating Open-Source LLMs for Multi-Label ATT&amp;CK Technique Classification on CTI Reports</a>
+                  <a
+                    href="https://arxiv.org/abs/2606.18166"
+                    target="_blank"
+                    rel="noopener"
+                    >Evaluating Open-Source LLMs for Multi-Label ATT&amp;CK
+                    Technique Classification on CTI Reports</a
+                  >
                 </h3>
-                <p class="pub__authors">A. Ryan, S. S. Noor, M. Erfan, <b>S. Mitra</b>, S. Mittal, M. R. Rahman</p>
+                <p class="pub__authors">
+                  A. Ryan, S. S. Noor, M. Erfan, <b>S. Mitra</b>, S. Mittal, M.
+                  R. Rahman
+                </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE ICMLA</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="preprint">
+            <article class="pub" data-type="preprint">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  Agentic AI for Cyber Defense: A Survey of Failure Modes, Applications, and Research Opportunities
+                  Agentic AI for Cyber Defense: A Survey of Failure Modes,
+                  Applications, and Research Opportunities
                 </h3>
-                <p class="pub__authors"><b>S. Mitra</b>, R. Patel, S. Mittal, M. R. Rahman, S. Rahimi</p>
+                <p class="pub__authors">
+                  <b>S. Mitra</b>, R. Patel, S. Mittal, M. R. Rahman, S. Rahimi
+                </p>
                 <div class="pub__foot">
                   <span class="pub__venue">Pre-print</span>
                   <span class="chip chip--info">Under review</span>
@@ -240,15 +374,21 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="preprint">
+            <article class="pub" data-type="preprint">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2603.09134" target="_blank" rel="noopener"
-                    >AgenticCyOps: Securing Multi-Agentic AI Integration in Enterprise Cyber Operations</a
+                  <a
+                    href="https://arxiv.org/abs/2603.09134"
+                    target="_blank"
+                    rel="noopener"
+                    >AgenticCyOps: Securing Multi-Agentic AI Integration in
+                    Enterprise Cyber Operations</a
                   >
                 </h3>
-                <p class="pub__authors"><b>S. Mitra</b>, R. Patel, S. Mittal, M. R. Rahman, S. Rahimi</p>
+                <p class="pub__authors">
+                  <b>S. Mitra</b>, R. Patel, S. Mittal, M. R. Rahman, S. Rahimi
+                </p>
                 <div class="pub__foot">
                   <span class="pub__venue">arXiv:2603.09134</span>
                   <span class="chip chip--info">Under review</span>
@@ -256,14 +396,16 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="preprint">
+            <article class="pub" data-type="preprint">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  Staying on the Attractor: Supervising Neural Surrogates of 3D Turbulence Where They Leave It
+                  Staying on the Attractor: Supervising Neural Surrogates of 3D
+                  Turbulence Where They Leave It
                 </h3>
                 <p class="pub__authors">
-                  Y. Dai, <b>S. Mitra</b>, R. Patel, Y. Sun, S. Chen, J. Gong, S. Mittal, S. Rahimi, X. Jia, R. Yu
+                  Y. Dai, <b>S. Mitra</b>, R. Patel, Y. Sun, S. Chen, J. Gong,
+                  S. Mittal, S. Rahimi, X. Jia, R. Yu
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">Pre-print</span>
@@ -271,14 +413,21 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="preprint">
+            <article class="pub" data-type="preprint">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2608.23666" target="_blank" rel="noopener">Gated Activation Steering for Reducing Sycophancy &amp; Hallucination in Medical Question Answering</a>
+                  <a
+                    href="https://arxiv.org/abs/2608.23666"
+                    target="_blank"
+                    rel="noopener"
+                    >Gated Activation Steering for Reducing Sycophancy &amp;
+                    Hallucination in Medical Question Answering</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  H. Tripathi, S. Neupane, <b>S. Mitra</b>, S. Mittal, N. A. Golilarz, S. Rahimi
+                  H. Tripathi, S. Neupane, <b>S. Mitra</b>, S. Mittal, N. A.
+                  Golilarz, S. Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">Pre-print</span>
@@ -286,25 +435,37 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="preprint">
+            <article class="pub" data-type="preprint">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2609.16433" target="_blank" rel="noopener">Evaluating the NIST Bugs Framework Against CWE as a Successor for Automated Vulnerability Classification</a>
+                  <a
+                    href="https://arxiv.org/abs/2609.16433"
+                    target="_blank"
+                    rel="noopener"
+                    >Evaluating the NIST Bugs Framework Against CWE as a
+                    Successor for Automated Vulnerability Classification</a
+                  >
                 </h3>
-                <p class="pub__authors">M. N. Hoque, <b>S. Mitra</b>, S. Neupane, S. Mittal, S. Rahimi</p>
+                <p class="pub__authors">
+                  M. N. Hoque, <b>S. Mitra</b>, S. Neupane, S. Mittal, S. Rahimi
+                </p>
                 <div class="pub__foot">
                   <span class="pub__venue">Pre-print</span>
-                  <span class="chip chip--info">Under review</span>
+                  <span class="pub__venue">arXiv:2609.16433</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="preprint">
+            <article class="pub" data-type="preprint">
               <div class="pub__year">2026</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2604.02377" target="_blank" rel="noopener"
-                    >What Are Adversaries Doing? Automating Tactics, Techniques, and Procedures Extraction: A Systematic Review</a
+                  <a
+                    href="https://arxiv.org/abs/2604.02377"
+                    target="_blank"
+                    rel="noopener"
+                    >What Are Adversaries Doing? Automating Tactics, Techniques,
+                    and Procedures Extraction: A Systematic Review</a
                   >
                 </h3>
                 <p class="pub__authors">M. Tamanna, <b>S. Mitra</b>, et al.</p>
@@ -314,78 +475,127 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="journal">
+            <article class="pub" data-type="journal">
               <div class="pub__year">2025</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://dl.acm.org/doi/10.1145/3709365" target="_blank" rel="noopener">MedInsight: A Multi-Source Context Augmentation Framework for Generating Patient-Centric
-                  Medical Responses using Large Language Models</a>
+                  <a
+                    href="https://dl.acm.org/doi/10.1145/3709365"
+                    target="_blank"
+                    rel="noopener"
+                    >MedInsight: A Multi-Source Context Augmentation Framework
+                    for Generating Patient-Centric Medical Responses using Large
+                    Language Models</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  S. Neupane, <b>S. Mitra</b>, S. Mittal, M. Gaur, N. A. Golilarz, S. Rahimi, A. Amirlatifi
+                  S. Neupane, <b>S. Mitra</b>, S. Mittal, M. Gaur, N. A.
+                  Golilarz, S. Rahimi, A. Amirlatifi
                 </p>
                 <div class="pub__foot">
-                  <span class="pub__venue">ACM Trans. Computing for Healthcare 6(2)</span>
+                  <span class="pub__venue"
+                    >ACM Trans. Computing for Healthcare 6(2)</span
+                  >
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2025</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2511.19644" target="_blank" rel="noopener">IRSDA: An Agent-Orchestrated Framework for Enterprise Intrusion Response</a>
-                </h3>
-                <p class="pub__authors">D. Panigrahi, R. Patel, <b>S. Mitra</b>, S. Mittal, S. Rahimi</p>
-                <div class="pub__foot"><span class="pub__venue">IEEE BigData</span></div>
-              </div>
-            </article>
-<article class="pub" data-type="conference">
-              <div class="pub__year">2025</div>
-              <div>
-                <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2504.21028" target="_blank" rel="noopener">Semantic-Aware Contrastive Fine-Tuning: Boosting Multimodal Malware Classification with
-                  Discriminative Embeddings</a>
-                </h3>
-                <p class="pub__authors">I. Sanchez, <b>S. Mitra</b>, A. Piplai, S. Mittal</p>
-                <div class="pub__foot"><span class="pub__venue">IJCNN</span></div>
-              </div>
-            </article>
-<article class="pub" data-type="conference">
-              <div class="pub__year">2025</div>
-              <div>
-                <h3 class="pub__title">
-                  <a href="https://ieeexplore.ieee.org/document/11050678" target="_blank" rel="noopener">TwinExplainer: Explaining Predictions of an Automotive Digital Twin</a>
+                  <a
+                    href="https://arxiv.org/abs/2511.19644"
+                    target="_blank"
+                    rel="noopener"
+                    >IRSDA: An Agent-Orchestrated Framework for Enterprise
+                    Intrusion Response</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  S. Neupane, <b>S. Mitra</b>, I. A. Fernandez, S. Mittal, S. Rahimi
+                  D. Panigrahi, R. Patel, <b>S. Mitra</b>, S. Mittal, S. Rahimi
+                </p>
+                <div class="pub__foot">
+                  <span class="pub__venue">IEEE BigData</span>
+                </div>
+              </div>
+            </article>
+            <article class="pub" data-type="conference">
+              <div class="pub__year">2025</div>
+              <div>
+                <h3 class="pub__title">
+                  <a
+                    href="https://arxiv.org/abs/2504.21028"
+                    target="_blank"
+                    rel="noopener"
+                    >Semantic-Aware Contrastive Fine-Tuning: Boosting Multimodal
+                    Malware Classification with Discriminative Embeddings</a
+                  >
+                </h3>
+                <p class="pub__authors">
+                  I. Sanchez, <b>S. Mitra</b>, A. Piplai, S. Mittal
+                </p>
+                <div class="pub__foot">
+                  <span class="pub__venue">IJCNN</span>
+                </div>
+              </div>
+            </article>
+            <article class="pub" data-type="conference">
+              <div class="pub__year">2025</div>
+              <div>
+                <h3 class="pub__title">
+                  <a
+                    href="https://ieeexplore.ieee.org/document/11050678"
+                    target="_blank"
+                    rel="noopener"
+                    >TwinExplainer: Explaining Predictions of an Automotive
+                    Digital Twin</a
+                  >
+                </h3>
+                <p class="pub__authors">
+                  S. Neupane, <b>S. Mitra</b>, I. A. Fernandez, S. Mittal, S.
+                  Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE CAI, 1070–1077</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="journal">
+            <article class="pub" data-type="journal">
               <div class="pub__year">2024</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://ieeexplore.ieee.org/document/10423748" target="_blank" rel="noopener">Security Considerations in AI-Robotics: A Survey of Current Methods, Challenges, and Opportunities</a>
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10423748"
+                    target="_blank"
+                    rel="noopener"
+                    >Security Considerations in AI-Robotics: A Survey of Current
+                    Methods, Challenges, and Opportunities</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  S. Neupane, <b>S. Mitra</b>, I. A. Fernandez, S. Saha, S. Mittal, J. Chen, N. Pillai, S. Rahimi
+                  S. Neupane, <b>S. Mitra</b>, I. A. Fernandez, S. Saha, S.
+                  Mittal, J. Chen, N. Pillai, S. Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE Access</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2024</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://link.springer.com/chapter/10.1007/978-3-031-87496-3_5" target="_blank" rel="noopener">LocalIntel: Generating Organizational Threat Intelligence from Global and Local Cyber Knowledge</a>
+                  <a
+                    href="https://link.springer.com/chapter/10.1007/978-3-031-87496-3_5"
+                    target="_blank"
+                    rel="noopener"
+                    >LocalIntel: Generating Organizational Threat Intelligence
+                    from Global and Local Cyber Knowledge</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  <b>S. Mitra</b>, S. Neupane, T. Chakraborty, S. Mittal, A. Piplai, M. Gaur, S. Rahimi
+                  <b>S. Mitra</b>, S. Neupane, T. Chakraborty, S. Mittal, A.
+                  Piplai, M. Gaur, S. Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">FPS</span>
@@ -394,78 +604,125 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2024</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://ieeexplore.ieee.org/document/10825797" target="_blank" rel="noopener">IRSKG: Unified Intrusion Response System Knowledge Graph Ontology for Cyber Defense</a>
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10825797"
+                    target="_blank"
+                    rel="noopener"
+                    >IRSKG: Unified Intrusion Response System Knowledge Graph
+                    Ontology for Cyber Defense</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  D. Panigrahi, <b>S. Mitra</b>, S. Neupane, S. Mittal, B. A. Blakely
-                </p>
-                <div class="pub__foot"><span class="pub__venue">IEEE BigData</span></div>
-              </div>
-            </article>
-<article class="pub" data-type="conference">
-              <div class="pub__year">2024</div>
-              <div>
-                <h3 class="pub__title">
-                  <a href="https://ieeexplore.ieee.org/document/10825266" target="_blank" rel="noopener">ClinicSum: Utilizing Language Models for Generating Clinical Summaries from Patient-Doctor Conversations</a>
-                </h3>
-                <p class="pub__authors">
-                  S. Neupane, H. Tripathi, <b>S. Mitra</b>, S. Bozorgzad, S. Mittal, S. Rahimi, A. Amirlatifi
+                  D. Panigrahi, <b>S. Mitra</b>, S. Neupane, S. Mittal, B. A.
+                  Blakely
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE BigData</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2024</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://ieeexplore.ieee.org/document/10835779" target="_blank" rel="noopener">A Survey on Privacy Attacks Against Digital Twin Systems in AI-Robotics</a>
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10825266"
+                    target="_blank"
+                    rel="noopener"
+                    >ClinicSum: Utilizing Language Models for Generating
+                    Clinical Summaries from Patient-Doctor Conversations</a
+                  >
                 </h3>
                 <p class="pub__authors">
-                  I. A. Fernandez, S. Neupane, T. Chakraborty, <b>S. Mitra</b>, S. Mittal, N. Pillai, J. Chen, S. Rahimi
+                  S. Neupane, H. Tripathi, <b>S. Mitra</b>, S. Bozorgzad, S.
+                  Mittal, S. Rahimi, A. Amirlatifi
+                </p>
+                <div class="pub__foot">
+                  <span class="pub__venue">IEEE BigData</span>
+                </div>
+              </div>
+            </article>
+            <article class="pub" data-type="conference">
+              <div class="pub__year">2024</div>
+              <div>
+                <h3 class="pub__title">
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10835779"
+                    target="_blank"
+                    rel="noopener"
+                    >A Survey on Privacy Attacks Against Digital Twin Systems in
+                    AI-Robotics</a
+                  >
+                </h3>
+                <p class="pub__authors">
+                  I. A. Fernandez, S. Neupane, T. Chakraborty, <b>S. Mitra</b>,
+                  S. Mittal, N. Pillai, J. Chen, S. Rahimi
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE CIC, 70–79</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2024</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://link.springer.com/chapter/10.1007/978-3-031-75201-8_12" target="_blank" rel="noopener">ReVisE: Emulated Visual Outfit Generation from User Reviews Using Generative-AI</a>
-                </h3>
-                <p class="pub__authors">S. R. Rosas, S. Neupane, <b>S. Mitra</b>, S. Mittal</p>
-                <div class="pub__foot"><span class="pub__venue">SEDE (Springer), 168–178</span></div>
-              </div>
-            </article>
-<article class="pub" data-type="conference">
-              <div class="pub__year">2024</div>
-              <div>
-                <h3 class="pub__title">
-                  <a href="https://www.researchgate.net/publication/383872534_Large_Language_Models_for_Engineering_Patient_Journey_Knowledge_Graphs" target="_blank" rel="noopener">Large Language Models for Engineering Patient Journey Knowledge Graphs</a>
-                </h3>
-                <p class="pub__authors">
-                  H. S. Al Khatib, S. Neupane, <b>S. Mitra</b>, H. Tripathi, S. Mittal, S. Rahimi, N. Marhamati, S. Bozorgzad
-                </p>
-                <div class="pub__foot"><span class="pub__venue">AAAI Fall Symposium</span></div>
-              </div>
-            </article>
-<article class="pub" data-type="preprint">
-              <div class="pub__year">2024</div>
-              <div>
-                <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2401.05680" target="_blank" rel="noopener"
-                    >Use of Graph Neural Networks in Aiding Defensive Cyber Operations</a
+                  <a
+                    href="https://link.springer.com/chapter/10.1007/978-3-031-75201-8_12"
+                    target="_blank"
+                    rel="noopener"
+                    >ReVisE: Emulated Visual Outfit Generation from User Reviews
+                    Using Generative-AI</a
                   >
                 </h3>
                 <p class="pub__authors">
-                  <b>S. Mitra</b>, T. Chakraborty, S. Neupane, A. Piplai, S. Mittal
+                  S. R. Rosas, S. Neupane, <b>S. Mitra</b>, S. Mittal
+                </p>
+                <div class="pub__foot">
+                  <span class="pub__venue">SEDE (Springer), 168–178</span>
+                </div>
+              </div>
+            </article>
+            <article class="pub" data-type="conference">
+              <div class="pub__year">2024</div>
+              <div>
+                <h3 class="pub__title">
+                  <a
+                    href="https://www.researchgate.net/publication/383872534_Large_Language_Models_for_Engineering_Patient_Journey_Knowledge_Graphs"
+                    target="_blank"
+                    rel="noopener"
+                    >Large Language Models for Engineering Patient Journey
+                    Knowledge Graphs</a
+                  >
+                </h3>
+                <p class="pub__authors">
+                  H. S. Al Khatib, S. Neupane, <b>S. Mitra</b>, H. Tripathi, S.
+                  Mittal, S. Rahimi, N. Marhamati, S. Bozorgzad
+                </p>
+                <div class="pub__foot">
+                  <span class="pub__venue">AAAI Fall Symposium</span>
+                </div>
+              </div>
+            </article>
+            <article class="pub" data-type="preprint">
+              <div class="pub__year">2024</div>
+              <div>
+                <h3 class="pub__title">
+                  <a
+                    href="https://arxiv.org/abs/2401.05680"
+                    target="_blank"
+                    rel="noopener"
+                    >Use of Graph Neural Networks in Aiding Defensive Cyber
+                    Operations</a
+                  >
+                </h3>
+                <p class="pub__authors">
+                  <b>S. Mitra</b>, T. Chakraborty, S. Neupane, A. Piplai, S.
+                  Mittal
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">arXiv:2401.05680</span>
@@ -473,12 +730,17 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="preprint">
+            <article class="pub" data-type="preprint">
               <div class="pub__year">2024</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2409.07736" target="_blank" rel="noopener"
-                    >Transfer Learning Applied to Computer Vision Problems: Survey on Current Progress, Limitations, and Opportunities</a
+                  <a
+                    href="https://arxiv.org/abs/2409.07736"
+                    target="_blank"
+                    rel="noopener"
+                    >Transfer Learning Applied to Computer Vision Problems:
+                    Survey on Current Progress, Limitations, and
+                    Opportunities</a
                   >
                 </h3>
                 <p class="pub__authors">
@@ -489,77 +751,125 @@
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2023</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2305.08993" target="_blank" rel="noopener">Survey of Malware Analysis through Control Flow Graph using Machine Learning</a>
+                  <a
+                    href="https://arxiv.org/abs/2305.08993"
+                    target="_blank"
+                    rel="noopener"
+                    >Survey of Malware Analysis through Control Flow Graph using
+                    Machine Learning</a
+                  >
                 </h3>
-                <p class="pub__authors"><b>S. Mitra</b>, S. A. Torri, S. Mittal</p>
+                <p class="pub__authors">
+                  <b>S. Mitra</b>, S. A. Torri, S. Mittal
+                </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE TrustCom</span>
                   <span class="chip">First author</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2023</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2301.11767" target="_blank" rel="noopener">CAPoW: Context-Aware AI-Assisted Proof of Work based DDoS Defense</a>
+                  <a
+                    href="https://arxiv.org/abs/2301.11767"
+                    target="_blank"
+                    rel="noopener"
+                    >CAPoW: Context-Aware AI-Assisted Proof of Work based DDoS
+                    Defense</a
+                  >
                 </h3>
-                <p class="pub__authors">T. Chakraborty, <b>S. Mitra</b>, S. Mittal</p>
+                <p class="pub__authors">
+                  T. Chakraborty, <b>S. Mitra</b>, S. Mittal
+                </p>
                 <div class="pub__foot">
                   <span class="pub__venue">SECRYPT, 62–72</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="preprint">
+            <article class="pub" data-type="preprint">
               <div class="pub__year">2023</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://arxiv.org/abs/2309.08814" target="_blank" rel="noopener"
-                    >URA*: Uncertainty-Aware Path Planning using Image-Based Aerial-to-Ground Traversability
-                    Estimation for Off-Road Environments</a
+                  <a
+                    href="https://arxiv.org/abs/2309.08814"
+                    target="_blank"
+                    rel="noopener"
+                    >URA*: Uncertainty-Aware Path Planning using Image-Based
+                    Aerial-to-Ground Traversability Estimation for Off-Road
+                    Environments</a
                   >
                 </h3>
                 <p class="pub__authors">
-                  C. Moore, <b>S. Mitra</b>, N. Pillai, M. Moore, S. Mittal, C. Bethel, J. Chen
+                  C. Moore, <b>S. Mitra</b>, N. Pillai, M. Moore, S. Mittal, C.
+                  Bethel, J. Chen
                 </p>
                 <div class="pub__foot">
                   <span class="pub__venue">arXiv:2309.08814</span>
                 </div>
               </div>
             </article>
-<article class="pub" data-type="journal">
+            <article class="pub" data-type="journal">
               <div class="pub__year">2022</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://www.sciencedirect.com/science/article/pii/S2665963822000604" target="_blank" rel="noopener">AI Adaptive POW: An AI-Assisted Proof of Work (POW) Framework for DDoS Defense</a>
+                  <a
+                    href="https://www.sciencedirect.com/science/article/pii/S2665963822000604"
+                    target="_blank"
+                    rel="noopener"
+                    >AI Adaptive POW: An AI-Assisted Proof of Work (POW)
+                    Framework for DDoS Defense</a
+                  >
                 </h3>
-                <p class="pub__authors">T. Chakraborty, <b>S. Mitra</b>, S. Mittal, M. Young</p>
+                <p class="pub__authors">
+                  T. Chakraborty, <b>S. Mitra</b>, S. Mittal, M. Young
+                </p>
                 <div class="pub__foot">
-                  <span class="pub__venue">Software Impacts (Elsevier) 13, 100335</span>
+                  <span class="pub__venue"
+                    >Software Impacts (Elsevier) 13, 100335</span
+                  >
                 </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2022</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://www.researchgate.net/publication/359390249_A_Policy_Driven_AI-Assisted_PoW_Framework" target="_blank" rel="noopener">A Policy Driven AI-Assisted PoW Framework</a>
+                  <a
+                    href="https://www.researchgate.net/publication/359390249_A_Policy_Driven_AI-Assisted_PoW_Framework"
+                    target="_blank"
+                    rel="noopener"
+                    >A Policy Driven AI-Assisted PoW Framework</a
+                  >
                 </h3>
-                <p class="pub__authors">T. Chakraborty, <b>S. Mitra</b>, S. Mittal, M. Young</p>
-                <div class="pub__foot"><span class="pub__venue">IEEE/IFIP DSN</span></div>
+                <p class="pub__authors">
+                  T. Chakraborty, <b>S. Mitra</b>, S. Mittal, M. Young
+                </p>
+                <div class="pub__foot">
+                  <span class="pub__venue">IEEE/IFIP DSN</span>
+                </div>
               </div>
             </article>
-<article class="pub" data-type="conference">
+            <article class="pub" data-type="conference">
               <div class="pub__year">2021</div>
               <div>
                 <h3 class="pub__title">
-                  <a href="https://ieeexplore.ieee.org/document/9671867" target="_blank" rel="noopener">Combating Fake Cyber Threat Intelligence using Provenance in Cybersecurity Knowledge Graphs</a>
+                  <a
+                    href="https://ieeexplore.ieee.org/document/9671867"
+                    target="_blank"
+                    rel="noopener"
+                    >Combating Fake Cyber Threat Intelligence using Provenance
+                    in Cybersecurity Knowledge Graphs</a
+                  >
                 </h3>
-                <p class="pub__authors"><b>S. Mitra</b>, A. Piplai, S. Mittal, A. Joshi</p>
+                <p class="pub__authors">
+                  <b>S. Mitra</b>, A. Piplai, S. Mittal, A. Joshi
+                </p>
                 <div class="pub__foot">
                   <span class="pub__venue">IEEE BigData</span>
                   <span class="chip">First author</span>
@@ -579,7 +889,16 @@
                would claim today's date on a page that has not changed. Edit
                this string (in every page's footer) when the site is revised. -->
           <button class="stamp" type="button" aria-expanded="false">
-            <svg class="stamp__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg
+              class="stamp__ico"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
               <circle cx="12" cy="12" r="10" />
               <path d="M12 16v-4M12 8h.01" />
             </svg>
@@ -587,9 +906,21 @@
           </button>
         </span>
         <nav class="footer__links" aria-label="Profiles">
-          <a href="https://scholar.google.com/citations?user=drsx2nkAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
-          <a href="https://github.com/shaswata09" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/shaswatamitra" target="_blank" rel="noopener">LinkedIn</a>
+          <a
+            href="https://scholar.google.com/citations?user=drsx2nkAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener"
+            >Scholar</a
+          >
+          <a href="https://github.com/shaswata09" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/shaswatamitra"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
           <a href="mailto:smitra3@ua.edu">Email</a>
         </nav>
       </div>
