@@ -30,6 +30,8 @@ html[data-theme="light"] {
   --accent-fg: #fafafa;
   --accent-soft: #ebebeb;
   --accent-border: #a3a3a3;
+  --link: #1d4ed8; /* blue-700 — 6.7:1 on panel */
+  --link-line: rgba(29, 78, 216, 0.45);
 
   --info: #3b6fbf; /* 5.34:1 on panel */
   --info-soft: #eff4fc;
@@ -87,6 +89,8 @@ html[data-theme="dark"] {
   --accent-fg: #171717;
   --accent-soft: #303030;
   --accent-border: #5a5a5a;
+  --link: #60a5fa; /* blue-400 — 6.6:1 on panel */
+  --link-line: rgba(96, 165, 250, 0.5);
 
   --info: #7ba5e8; /* 7.31:1 on panel */
   --info-soft: #16202e;
@@ -1162,9 +1166,18 @@ html[data-theme="light"] .icon-btn__moon {
   letter-spacing: -0.008em;
   margin-bottom: 5px;
 }
-.pub__title a:hover {
+.pub__title a {
+  color: var(--link);
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-decoration-color: var(--link-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+.pub__title a:hover,
+.pub__title a:focus-visible {
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
 }
 
 .pub__authors {
@@ -1618,10 +1631,11 @@ html[data-theme="light"] .icon-btn__moon {
   }
 }
 
-/* Inline paper links (news) — underline so they read as links in the monochrome palette */
+/* Inline paper links (news) — blue + underline so readers see they are links */
 .paper-link {
+  color: var(--link);
   text-decoration: underline;
-  text-decoration-color: var(--accent-border);
+  text-decoration-color: var(--link-line);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: text-decoration-color 0.15s ease;
@@ -1629,4 +1643,5 @@ html[data-theme="light"] .icon-btn__moon {
 .paper-link:hover,
 .paper-link:focus-visible {
   text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
 }
