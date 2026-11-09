@@ -1617,3 +1617,16 @@ html[data-theme="light"] .icon-btn__moon {
     break-inside: avoid;
   }
 }
+
+/* Inline paper links (news) — underline so they read as links in the monochrome palette */
+.paper-link {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-border);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+.paper-link:hover,
+.paper-link:focus-visible {
+  text-decoration-color: currentColor;
+}
