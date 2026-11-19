@@ -590,7 +590,7 @@ html[data-theme="light"] .icon-btn__moon {
   font-size: var(--text-lg);
   line-height: 1.62;
   color: var(--text-2);
-  max-width: 62ch;
+  max-width: 68ch;
   margin-bottom: 28px;
 }
 .hero__lede em {
