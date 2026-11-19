@@ -590,10 +590,24 @@ html[data-theme="light"] .icon-btn__moon {
   font-size: var(--text-lg);
   line-height: 1.62;
   color: var(--text-2);
-  max-width: 75ch;
+  max-width: 84ch;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
   margin-bottom: 28px;
 }
+.hero__lede p + p {
+  margin-top: 12px;
+}
+/* The three research threads: set in from the intro with a hairline rule */
+.hero__lede p:not(:first-child) {
+  padding-left: 16px;
+  border-left: 2px solid var(--border-strong, var(--accent-border));
+}
 .hero__lede em {
+  hyphens: manual; /* never split the bold key phrases */
+  -webkit-hyphens: manual;
   color: var(--text-1);
   font-style: normal;
   font-weight: 550;
